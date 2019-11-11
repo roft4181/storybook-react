@@ -15,15 +15,19 @@ storiesOf('Button', module)
   .add('with text abc', () => <Button onClick={action('clicked')}>hello world!</Button>, {
     notes: { markdown: docs },
   })
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ), {
-    notes: { markdown: docs },
-  });
+  .add(
+    'with some emoji',
+    () => (
+      <Button onClick={action('clicked')}>
+        <span role="img" aria-label="so cool">
+          😀 😎 👍 💯 s
+        </span>
+      </Button>
+    ),
+    {
+      notes: { markdown: docs },
+    }
+  );
 
 storiesOf('Select', module)
   .add('Index', () => (
@@ -43,10 +47,7 @@ storiesOf('Storybook Knobs', module)
   .add('with a button', () => {
     const disabled = boolean('Disabled', false);
     return (
-      <button
-        disabled={disabled}
-        className={disabled ? 'disabled' : ''}
-      >
+      <button disabled={disabled} className={disabled ? 'disabled' : ''}>
         {text('Label', `abc${disabled ? '(disabled)' : ''}`)}
       </button>
     );
@@ -55,11 +56,11 @@ storiesOf('Storybook Knobs', module)
     const name = text('Name', 'Arunoda Susiripala');
     const age = number('Age', 89);
     const content = `I am ${name} and I'm ${age} years old.`;
-    return (<div>{content}</div>);
+    return <div>{content}</div>;
   })
   .add('with color', () => {
     const label = 'Color';
     const defaultValue = '#ff00ff';
     const value = color(label, defaultValue);
-    return (<div style={{ color: value }}>{value}</div>);
+    return <div style={{ color: value }}>{value}</div>;
   });

@@ -9,10 +9,10 @@ enzymeConfigure({ adapter: new Adapter() });
 
 addDecorator(
   withOptions({
-    name: 'terrance\'s storybook',
+    name: "terrance's storybook",
     goFullScreen: false,
     showAddonsPanel: true,
-    showSearchBox: false
+    showSearchBox: false,
     // more configuration here
   })
 );
@@ -22,7 +22,7 @@ addDecorator(withNotes);
 function loadStories() {
   require('../stories/index.js');
   require('../stories/example.js');
-  require('../stories/test.js');
+  require('../stories/demo.js');
   // You can require as many stories as you need.
 }
 configure(loadStories, module);
